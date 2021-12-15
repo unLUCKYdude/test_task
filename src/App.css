@@ -1,38 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    font-family: "Poppins";
+}
+
 .App {
-  text-align: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("background.svg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+    width: 800px;
+    height: 330px;
+    background-color: #d2dae2;
+    border-radius: 32px;
+    display: flex;
+    user-select: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container > div:first-child {
+    flex: 1;
+    padding: 32px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.container > div:first-child span {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 32px;
+    color: #1e272e;
+    border-radius: 8px;
 }
 
-.App-link {
-  color: #61dafb;
+.container > div:first-child span.active {
+    padding: 3px;
+    background-color: #05c46b;
+    color: #ffffff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container > div:first-child span.passed {
+    color: #05c46b;
+}
+
+.container > div:first-child span.missed {
+    padding: 3px;
+    background-color: #f53b57;
+    color: #ffffff;
+}
+
+.container > div:last-child {
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 16px 0;
+}
+
+.container img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.panel-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-item > div {
+    display: flex;
+    align-items: center;
+}
+
+.panel-item > div span {
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.panel-item:nth-child(1) > span::after {
+    content: "ЗН./МИН";
+    font-size: 12px;
+    margin-left: 2px;
+}
+
+.panel-item:nth-child(2) > span::after {
+    content: "%";
+    font-size: 16px;
+    margin-left: 2px;
+}
+
+.panel-item > span {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 40px;
+}
+
+.panel-item:last-child {
+    cursor: pointer;
+    margin-top: 36px;
 }
